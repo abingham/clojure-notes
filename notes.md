@@ -12,7 +12,7 @@ Makes a namespace active. Generally at top of file.
 
 # Functions #
 
-```
+```clojure
 (defn func-name
   "docstring"
   [arg1 arg2 arg3]
@@ -28,7 +28,7 @@ dispatch function.
 
 This defines the API of the multimethod, as well as the dispatch method.
 
-```
+```clojure
 (defmulti apply-event
   "Apply an event to a state, returning a new state."
   (fn [event state] (:type event)))
@@ -40,7 +40,7 @@ match.
 
 ## defmethod ##
 
-```
+```clojure
 (defmethod apply-event
   :rename
   [event state]
@@ -63,7 +63,7 @@ match.
 
 Define a protocol.
 
-```
+```clojure
 (defprotocol Flubbable
   (flub [this x])
   (unflub [this]))
@@ -73,7 +73,7 @@ Define a protocol.
 
 Define a type. Typically used for programming or system constructs.
 
-```
+```clojure
 (deftype File [name size])
 (.name (->File "answer" 42))
 => answer
@@ -82,7 +82,7 @@ Define a type. Typically used for programming or system constructs.
 Types can implement protocols either in their definition or
 extrinsically.
 
-```
+```clojure
 (deftype File [name size]
  Flubbable
  (flub [this x] (...)))
@@ -98,7 +98,7 @@ Define a record. Much like `deftype`, but records are also
 `IPersistentMap`s. They are typically used for "domain" data rather
 than programming constructs.
 
-```
+```clojure
 (defrecord Widget [foo bar baz])
 (:foo (->Widget 1 2 3))
 => 1
