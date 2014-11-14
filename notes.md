@@ -2,7 +2,7 @@
 
 Makes a namespace active. Generally at top of file.
 
-```
+```clojure
 (ns path.of.namespace
 (:use [some.package :as other]
       [another.package :only [name1 name2]])
